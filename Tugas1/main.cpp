@@ -36,27 +36,12 @@ int total(int myArray[], int jumlah){
 }
 
 
-float rata(int myArray[],int jumlah){
-    float hasil;
-    for(int i=0; i < jumlah; i++){
-        hasil += myArray[i];
-    }
-    return hasil /= jumlah;
+float rata(float hasil,int jumlah){
+    return hasil / jumlah;
 }
 
 
-void arr(int myArray[],int jumlah){
-    cout << "[";
-    for (int i=0; i < jumlah; i++){
-        cout << myArray[i];
-        if (i < jumlah-1){
-            cout << ",";
-        } else {
-            cout << "";
-        }
-    }
-    cout << "]"<<endl;
-}
+void arr(int myArray[],int jumlah);
 
 
 int main()
@@ -91,8 +76,21 @@ int main()
 
 
     cout <<  "===============\t Rata - Rata Element Array ===============" << endl;
-    cout << "Rata - Rata \t: "<< rata(myArray,jumlah) ;
+    cout << "Rata - Rata \t: "<< rata(total(myArray,jumlah),jumlah) ;
     return 0;
+}
+
+void arr(int myArray[],int jumlah){
+    cout <<"Array[" << jumlah << "] = {";
+    for (int i=0; i < jumlah; i++){
+        cout << myArray[i];
+        if (i < jumlah-1){
+            cout << ",";
+        } else {
+            cout << "";
+        }
+    }
+    cout << "}"<<endl;
 }
 
 
