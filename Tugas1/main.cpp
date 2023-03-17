@@ -48,22 +48,21 @@ int main()
 {
 
     //Kamus
-    int a = 5,b =9,jumlah;
+    int a,b,jumlah;
 
     //Algoritma
-    cout <<  "===============\t Penjumlahan 2 Bilangan ===============" << endl;
+    cout << "===============\t Program Penjumlahan, Pengurangan, dan Perkalian ==================" << endl;
+    cout << "Masukkan bilangan pertama\t= ";
+    cin >> a;
+    cout << "Masukkan bilangan kedua\t\t= ";
+    cin >> b;
+    cout <<  "-----------------------------------\tHasil\t-----------------------------------" << endl;
     cout << a << " + " << b << " = " << penjumlahan(a,b) << endl;
-
-
-    cout <<  "===============\t Pengurangan 2 Bilangan ===============" << endl;
     cout << a << " - " << b << " = " << pengurangan(a,b) << endl;
-
-
-    cout <<  "===============\t Perkalian 2 Bilangan \t===============" << endl;
     cout << a << " * " << b << " = " << perkalian(a,b) << endl;
 
 
-    cout << "===============\t Total Element Array \t===============" << endl;
+    cout << "==================== Program Total & Rata -Rata Element Array =====================" << endl;
     cout << "Masukkan jumlah element Array yang akan diinput : ";
     cin >> jumlah;                                                              //jumlah bilangan yang akan diinput
     int myArray[jumlah];
@@ -72,10 +71,8 @@ int main()
         cin >> myArray[j];
     }
     arr(myArray,jumlah);
+    cout <<  "-----------------------------------\tHasil\t-----------------------------------" << endl;
     cout << "total \t\t: " << total(myArray,jumlah) << endl;
-
-
-    cout <<  "===============\t Rata - Rata Element Array ===============" << endl;
     cout << "Rata - Rata \t: "<< rata(total(myArray,jumlah),jumlah) ;
     return 0;
 }
