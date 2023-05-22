@@ -23,27 +23,29 @@ int pengurangan(int b){
         return b-pengurangan(b-1);
 }
 
-int perkalian(int c){
-    if(c==0)
-        return 1;
-    else
-        return c*perkalian(c-1);
-}
 
-int perkalian2(int c,int n){
+int perkalian(int c,int n){
     if (n==0)
         return 0;
 	else if (n > 0)
-        return c + perkalian2(c, n - 1);
+        return c + perkalian(c, n - 1);
 	else
-        return (-c) + perkalian2(c, n+1);
+        return (-c) + perkalian(c, n+1);
 }
 
-int pembagian(int d){
-    if(d==0)
-        return 1;
+int pembagian(int d, int e){
+    if(d<e)
+        return 0;
     else
-        return d/pembagian(d-1);
+        return 1+pembagian(d-e, e);
+}
+
+int pangkat(int e, int f) {
+    if(f == 0)
+      return 1;
+    else
+      return e*pangkat(e,f-1);
+
 }
 
 int fibonaci(int e){
@@ -62,22 +64,53 @@ int faktorial(int f){
         return f*faktorial(f-1);
 }
 
+void keterangan(int n, int k);
 
 int main()
 {
-    int n;
-    cout << "Masukkan Bilangan : ";
-    cin >> n;
-    cout << "Penjumlahan : " << penjumlahan(n) << endl;
-    cout << "Pengurangan : " << pengurangan(n) << endl;
-    cout << "Perkalian : " << perkalian(n) << endl;
-    cout << "Perkalian 4 * " << n << " : " << perkalian2(4,n) << endl;
-    cout << "Pembagian : " << pembagian(n) << endl;
-    cout << "Fibonaci : " << fibonaci(n) << endl;
+    int n,m;
+    cout << "-------------------------------------------------" << endl;
+    cout << "| Program Fungsi Rekursif \t\t\t|" << endl;
+    cout << "-------------------------------------------------" << endl;
+    cout << "Masukkan Bilangan ke-1 \t\t: ";cin >> n;
+    cout << "Masukkan Bilangan ke-2 \t\t: ";cin >> m;
+    cout << "=================================================" << endl;
+    cout << "Penjumlahan ";
+    keterangan(n,1);
+    cout << " \t: " << penjumlahan(n) << endl;
+    cout << "Pengurangan ";
+    keterangan(n,2);
+    cout << " \t: " << pengurangan(n) << endl;
+    cout << "Perkalian " << n << " * " << m << " \t\t: " << perkalian(n,m) << endl;
+    cout << "Pembagian " << n << " / " << m << " \t\t: " << pembagian(n,m) << endl;
+    cout << "Pangkat "   << n << " ^ " << m << " \t\t\t: " << pangkat(n,m) << endl;
+    cout << "Fibonaci ke-" << n << " \t\t\t: " << fibonaci(n) << endl;
     for(int i=0; i<=n ;i++){
         cout << fibonaci(i) << " ";
     }
     cout << endl;
-    cout << "Faktorial : " << faktorial(n) << endl;
+    cout << "Faktorial !" << n << " \t\t\t: " << faktorial(n) << endl;
+    cout << "=================================================" << endl;
     return 0;
+}
+
+void keterangan(int n, int k){
+    if(k==1){
+      for(int i=n; i>0 ;i--){
+            cout << "(" << i;
+            cout << (i>1? " + ": "");
+        }
+        for(int j=0; j<n ;j++){
+            cout << ")";
+        }
+    }
+     else {
+        for(int i=n; i>0 ;i--){
+            cout << "(" << i;
+            cout << (i>1? " - ": "");
+        }
+        for(int j=0; j<n ;j++){
+            cout << ")";
+        }
+     }
 }
