@@ -37,7 +37,7 @@ int main()
 
     cout << "NIM \t\t Nama \t Jurusan \t Tahun Lulus" << endl; 
     for(int i=0; i<n; i++){
-        cout << dataDin[i].nim << "\t" << dataDin[i].nama << "\t" << dataDin[i].jurusan << "\t" << data[i].lulus << endl;
+        cout << dataDin[i].nim << "\t" << dataDin[i].nama << "\t" << dataDin[i].jurusan << "\t" << dataDin[i].lulus << endl;
     }
     return 0;
 }
