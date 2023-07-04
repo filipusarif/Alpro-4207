@@ -155,7 +155,7 @@ int main()
         binarySearch(arr, 0, n - 1, x);
     });
     cout << "Binary Search Time\t: " << BinaryTime << " microsecond" << endl;//di perangkat saya 0 microsecond
-    cout << "Quick Sort O(n) Space\t: " << constanttime(4) << " Byte" << endl;
+    cout << "Binary Search O(n)Space\t: " << constanttime(4) << " Byte" << endl;
 
     return 0;
 }
